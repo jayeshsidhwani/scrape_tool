@@ -1,8 +1,7 @@
 require 'nokogiri'
 require 'net/http'
 require 'uri'
-require 'rubygems'
-require 'pry'
+
 
 DOWNLOAD_LOCATION = "#{Dir.pwd}/Downloads"
 END_POINT_URL = "http://www.cs.sunysb.edu/~algorith/video-lectures/"
@@ -30,7 +29,7 @@ module ScrapeTool
 			begin
 			  local_file.write(open("#{END_POINT_URL}#{remote_file}")) 
 			ensure
-		    local_file.close()
+		   	  local_file.close()
 			end
 		end
 	end
