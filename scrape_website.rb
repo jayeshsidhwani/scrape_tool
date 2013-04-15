@@ -14,11 +14,6 @@ module ScrapeTool
 		  Net::HTTP.get(URI.parse(url))
 		end
 
-	  # Scrape the remote website
-	  #
-	  # Author:: Jayesh
-	  # Date:: 14/04/2013
-	  #
 		def scrape_remote_website
 			doc = Nokogiri::HTML(open("#{END_POINT_URL}"))
 
@@ -27,11 +22,6 @@ module ScrapeTool
 			end
 		end
 
-	  # Downloading the remote file
-	  #
-	  # Author:: Jayesh
-	  # Date:: 14/04/2013
-	  #
 		def download_binary_file(remote_file)
 			Dir.mkdir("#{DOWNLOAD_LOCATION}") unless File.exists?("#{DOWNLOAD_LOCATION}")
 			local_file = File.open("#{DOWNLOAD_LOCATION}/#{remote_file.gsub("/", "-")}", "w")
